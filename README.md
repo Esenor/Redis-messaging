@@ -1,6 +1,8 @@
 # Redis-messaging #
 
-Simple messaging system with Redis dans Node.js
+Simple messaging system with Redis in Node.js
+
+[redis client](https://www.npmjs.com/package/redis)
 
 ## Install ##
 
@@ -12,6 +14,9 @@ Simple messaging system with Redis dans Node.js
 ## Run ##
 
 > If redis is not listening port localhost:8379 edit **etc/redis.json**
+
+    # standard key/value
+    npm start
 
     # Messaging listener
     npm run subscriber

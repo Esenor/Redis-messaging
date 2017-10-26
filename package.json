@@ -5,7 +5,8 @@
   "main": "src/subscriber.js",
   "scripts": {
     "publisher": "node ./src/publisher.js",
-    "subscriber": "node ./src/subscriber.js"
+    "subscriber": "node ./src/subscriber.js",
+    "start": "node ./src/keyValue.js"
   },
   "author": "https://github.com/Esenor",
   "license": "ISC",
