@@ -1,6 +1,6 @@
 var config = require('../etc/redis.json')
 var redis = require('redis')
-var publisher = redis.createClient(config)
+var subscriber = redis.createClient(config)
 
 subscriber.on('subscribe', (topic, count) => {
   console.log(`just open connexion to redis on topic ${topic}`);
@@ -19,4 +19,4 @@ process.on('exit', exitHandler.bind())
 process.on('SIGINT', exitHandler.bind())
 process.on('uncaughtException', exitHandler.bind())
 
-subscriber.subscribe('efc');
+subscriber.subscribe('my_topic');
