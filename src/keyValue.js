@@ -23,6 +23,23 @@ function readValue (key, duration) {
   })
 }
 
+function setHashValue () {
+  console.log(` ->  Insert in 'hash0001' key '321' with 'toto' at value`)
+  client.hset('hash0001', '321', 'toto')
+}
+
+function readHashValue (hash, key) {
+  client.hget(hash, key, (error, response) => {
+    if (error) {
+      console.log(error)
+    } else {
+      console.log(` ->  Read hash ${hash}, key ${key}, result: ${response}`)
+    }
+  })
+}
+
 setValue()
 setTimeout(() => {readValue('key00001', 500)}, 500)
 setTimeout(() => {readValue('key00001', 1500)}, 1500)
+setTimeout(() => {setHashValue()}, 2000)
+setTimeout(() => {readHashValue('hash0001', '321')}, 2500)
